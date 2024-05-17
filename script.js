@@ -17,9 +17,29 @@ for (let c = 1; c<=16; c++) {
     container.appendChild(column);
 }
 
+
+// hover/color method 1:
+// addEventListener is only able to add an event to 1 DOM element
+// we need to loop through the nodelist to add ELs to every element
 const hoverC = document.querySelectorAll(".hover");
 hoverC.forEach((squareToColor) => {
     squareToColor.addEventListener("mouseover", () => {
         squareToColor.style.backgroundColor = "lightblue";
     });
 });
+
+// hover/color method 2:
+// //event delegation
+// let hovered;
+
+// container.onmouseover = (event) => {
+//     let target = event.target;
+//     if (target.classList != "hover") {
+//         return;
+//     }
+//     hover(target);
+// };
+
+// function hover() {
+//     hovered = 
+// }
