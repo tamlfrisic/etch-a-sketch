@@ -8,7 +8,7 @@ for (let c = 1; c<=16; c++) {
         square.style.textAlign = "center";
         square.style.height = "49px";
         square.style.width = "49px";
-        square.style.backgroundColor = "blue";
+        square.style.backgroundColor = "black";
         square.style.border = "1px solid white";
         square.classList.add("hover");
         column.appendChild(square);
@@ -33,7 +33,32 @@ for (let c = 1; c<=16; c++) {
 // //event delegation
 // it doesn't need the if statement, because it's already "checking" 
 // the conditions with the event listener 
+
+// use math random to generate a random RGB value (this should probably be a function??)
+let randomVal;
+let randomColor;
+
+function getRandomVal() {
+    let randomVal = Math.floor(Math.random() * 256);
+    console.log(randomVal);
+    return randomVal;
+
+}
+
+function getRandomColor() {
+    randomColor = "rgb(" + getRandomVal() + "," + getRandomVal() + "," + getRandomVal() + ")";
+    console.log(randomColor);
+    return randomColor;
+} 
+
 container.addEventListener("mouseover", (event) => {
     const squareToColor = event.target;
-        squareToColor.style.backgroundColor = "lightgreen";
+        squareToColor.style.backgroundColor = getRandomColor();
 });
+
+// allow the grid to return to its original color (cool but against prompt)
+// container.addEventListener("mouseout", (event) => {
+//     const squareToColor = event.target;
+//         squareToColor.style.backgroundColor = "blue";
+// });
+
