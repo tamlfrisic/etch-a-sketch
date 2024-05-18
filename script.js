@@ -1,3 +1,11 @@
+// 5/18: 
+// - need to figure out how to create the divs without having to 
+//      define the number of pixels.... 
+// - also, use a prompt to assign a value to a variable in the 
+//      nested loop (instead of the 16) a global var(?)
+//
+//
+
 const container = document.querySelector("#container");
 
 for (let c = 1; c<=16; c++) {
@@ -9,7 +17,7 @@ for (let c = 1; c<=16; c++) {
         square.style.height = "49px";
         square.style.width = "49px";
         square.style.backgroundColor = "black";
-        square.style.border = "1px solid white";
+        square.style.border = "1px solid azure";
         square.classList.add("hover");
         column.appendChild(square);
         
@@ -51,9 +59,12 @@ function getRandomColor() {
     return randomColor;
 } 
 
+let opacidad = 1.0;
 container.addEventListener("mouseover", (event) => {
     const squareToColor = event.target;
         squareToColor.style.backgroundColor = getRandomColor();
+        squareToColor.style.opacity = opacidad - 0.1;
+        console.log("opacity = " + opacidad);
 });
 
 // allow the grid to return to its original color (cool but against prompt)
