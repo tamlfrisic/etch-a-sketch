@@ -13,6 +13,12 @@ body {
  columns rather than appending each larger-loop column to the end of the initial container */
 #container {
     display: flex;
+    height: 962px;
+    width: 962px;
+    border: 1px solid azure;
+
+    /* overflow: auto; */
+    box-sizing: border-box;
 }
 
 label, select {
