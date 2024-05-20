@@ -1,6 +1,6 @@
 const container = document.querySelector("#container");
 
-let numOfSquares;
+let numOfSquares = 5;
     
 function getNumOfSquares() {
     numOfSquares = Number(prompt("How many squares would you like?"));
@@ -13,10 +13,8 @@ getSquares.addEventListener("click", () => {
     getNumOfSquares();
     drawGrid();
 })
-
+drawGrid(numOfSquares);
 function drawGrid() {
-    console.log("it's drawing " + numOfSquares + " this many squares");
-
     for (let c = 1; c<=numOfSquares; c++) {
         const column = document.createElement("div");
         column.classList.add("hover");
