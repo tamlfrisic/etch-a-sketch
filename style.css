@@ -16,9 +16,15 @@ body {
     height: 962px;
     width: 962px;
     border: 1px solid azure;
-
+    
     /* overflow: auto; */
     box-sizing: border-box;
+}
+
+.hover {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
 label, select {
