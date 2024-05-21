@@ -12,7 +12,7 @@ function getNumOfSquares() {
         alert("It's OK to cancel. Goodbye!");
         container.textContent = " byeeeeeee";
     } else {
-        alert("Hey, that doesn't meet my requirements! Please try again");
+        alert("Hey, that doesn't meet my requirements! Please try again.");
         getNumOfSquares();
     }  
 }
@@ -27,7 +27,6 @@ getSquares.addEventListener("click", () => {
 container.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("hover")) {
         const squareToColor = event.target;
-        event.stopPropagation();
 
         switch(choice) {
             case "normal": 
@@ -39,7 +38,6 @@ container.addEventListener("mouseover", (event) => {
                 squareToColor.style.opacity = 1.0;
                 break;
             case "shading":
-                event.stopPropagation();
                 let currentOpacity = squareToColor.style.opacity;
                 let originalColor = squareToColor.style.backgroundColor;
                 if (originalColor == "black") {
@@ -60,8 +58,6 @@ let choice = colorChoice.value;
 colorChoice.addEventListener("change", () => {
     choice = colorChoice.value;
 });
-
-let randomColor;
     
 function getRandomVal() {
     let randomVal = Math.floor(Math.random() * 256);
@@ -69,7 +65,7 @@ function getRandomVal() {
 }
 
 function getRandomColor() {
-    randomColor = "rgb(" + getRandomVal() + "," + getRandomVal() + "," + getRandomVal() + ")";
+    let randomColor = "rgb(" + getRandomVal() + "," + getRandomVal() + "," + getRandomVal() + ")";
     return randomColor;
 } 
 
